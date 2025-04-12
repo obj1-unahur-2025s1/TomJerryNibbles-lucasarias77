@@ -22,6 +22,38 @@ describe "test de tom y sus victimas" {
     assert.equals(90, tom.energia())
 
   }
+
+  test "tom come a nibbles" {
+    tom.comer(nibbles)
+    assert.equals(18.7, tom.velMax())
+    assert.equals(137, tom.energia())   // su energia seria 97 y su vel max 14.7//
+  }
+
+  test "jerry cumple tres años y tom lo come entonces su vel es 25.9 y su energia 209" {
+    jerry.cumplirAnios()
+    jerry.cumplirAnios()
+    jerry.cumplirAnios()
+    tom.comer(jerry)
+    assert.equals(25.9, tom.velMax())
+    assert.equals(209, tom.energia())
+  }
+
+  test "si tom corre 38 metros su velocidad pasa a ser 24 y su energia 190" {
+      tom.correr(38)
+      assert.equals(24, tom.velMax())
+      assert.equals(190, tom.energia())
+  }
+
+  test "tom come a mouse y su energia es de 82 y su velocidad de 13.2" {
+    tom.comer(mouse)
+    assert.equals(82, tom.energia())
+    assert.equals(13.2, tom.velMax())
+  }
+
+  test "tom puede cazar a una distancia de 100 luego de comer a mouse" {
+    tom.comer(mouse)
+    assert.that(tom.puedeCazarAlgo(50))
+  }
 }
 
 

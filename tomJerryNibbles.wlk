@@ -51,3 +51,8 @@ object nibbles {
 
 }
 
+
+object mouse {
+  method peso() {return 20}
+  method edad() {return 5}
+}
